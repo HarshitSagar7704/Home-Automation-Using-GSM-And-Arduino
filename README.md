@@ -1,4 +1,4 @@
-#    HOME AUTOMATION
+#    HOME AUTOMATION12
 
 In this project report, it explains how a reliable and
 an authentic wireless communication could be
