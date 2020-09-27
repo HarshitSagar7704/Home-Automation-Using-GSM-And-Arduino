@@ -40,4 +40,4 @@ applications we need to have some
 commons peripherals including GSM
 MODEM, SIM, microcontroller, LCD
 (Liquid crystal display), power supply and
-also some connecting wires
+also some connecting wires.
