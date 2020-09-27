@@ -1,29 +1,43 @@
-# Foobar
+#    HOME AUTOMATION
 
-Foobar is a Python library for dealing with word pluralization.
+In this project report, it explains how a reliable and
+an authentic wireless communication could be
+easily developed between a mobile phone and
+microcontroller using GSM (Global System for
+Mobile Communication) MODEM (ModulatorDemodulator).
+ This report explains GSM based
+home automation system which can be widely used
+for multitude of applications including educational
+sector, traffic control, banks, public advertisements
+etc. 
 
-## Installation
+![DEMO!](https://user-images.githubusercontent.com/69238027/94373120-d2abfc80-0120-11eb-906c-6ac119aeef83.jpeg)
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+![DEMO5](https://user-images.githubusercontent.com/69238027/94373055-5e715900-0120-11eb-918b-c2d36f3b7964.jpeg)
 
-```bash
-pip install foobar
-```
 
-## Usage
+## OBJECTIVE
 
-```python
-import foobar
+The main objective of this project is to
+design a control system, that will act as an
+embedded system which can monitor and control appliances and other devices locally.
+The proposed approach for designing this system is
+to implement a microcontroller-based control
+module that receives its instructions and command
+from a cellular phone over the GSM network. The
+microcontroller then will carry out the issued
+commands.
 
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+## Tasks:
+* Sending message from any of the remote
+area to the home appliances using GSM
+mobile.
+* For sending the text message from remote
+area we need to interface the mobile phone
+with GSM Modem.
+* For developing some of GSM based
+applications we need to have some
+commons peripherals including GSM
+MODEM, SIM, microcontroller, LCD
+(Liquid crystal display), power supply and
+also some connecting wires
