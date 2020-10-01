@@ -1,31 +1,31 @@
-#include <SoftwareSerial.h> 
-#include <LiquidCrystal.h>
-String inputString = "";        
-String S1 = "OFF";
-String S2 = "OFF";
-String S3 = "OFF";
-String S4 = "OFF";
-String S5 = "OFF";
-String S6 = "OFF";
-String S7 = "OFF";
-String S8 = "OFF";
+#include <SoftwareSerial.h> //Library for Communication of GSM module with arduino
+#include <LiquidCrystal.h>  //Library for Lcd display
+String inputString = "";         
+String S1 = "OFF";          //Default state of switch 1
+String S2 = "OFF";          //Default state of switch 2       
+String S3 = "OFF";          //Default state of switch 3
+String S4 = "OFF";          //Default state of switch 4
+String S5 = "OFF";          //Default state of switch 5
+String S6 = "OFF";          //Default state of switch 6
+String S7 = "OFF";          //Default state of switch 7
+String S8 = "OFF";          //Default state of switch 8
 boolean stringComplete = false; 
-String incomingString ="";
+String incomingString =""; //String variable for store incoming message from gsm.
 int startIndex = 0;
 int endIndex = 0;
-int s1 = 6;
-int s2 = 7;
-int s3 = 8;
-int s4 = 9;
-int s5 = 10;
-int s6 = A3;
-int s7 = A0;
-int s8 = A1;
-const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+int s1 = 6;   //Pin D6 define for switch 1 in arduino.
+int s2 = 7;   //Pin D7 define for switch 2 in arduino.
+int s3 = 8;   //Pin D8 define for switch 3 in arduino.
+int s4 = 9;   //Pin D9 define for switch 4 in arduino.
+int s5 = 10;  //Pin D10 define for switch 5 in arduino.
+int s6 = A3;  //Pin A3 define for switch 6 in arduino.
+int s7 = A0;  //Pin A0 define for switch 7 in arduino.
+int s8 = A1;  //Pin A1 define for switch 8 in arduino.
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2; // pin defining for lcd.
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 void setup() {
-  Serial.begin(9600);
-lcd.begin(16,2);
+  Serial.begin(9600); // Baud rate for Serial Monitor.
+lcd.begin(16,2);        // Defining pins for outputs and inputs.
    pinMode(s1, OUTPUT);
    pinMode(s2, OUTPUT);
    pinMode(s3, OUTPUT);
@@ -34,7 +34,7 @@ lcd.begin(16,2);
    pinMode(s6, OUTPUT);
    pinMode(s7, OUTPUT);
    pinMode(s8, OUTPUT);
-   digitalWrite(s1,HIGH);
+   digitalWrite(s1,HIGH); // Default States for switches "OFF".
    digitalWrite(s2,HIGH);
    digitalWrite(s3,HIGH);
    digitalWrite(s4,HIGH);
@@ -42,7 +42,7 @@ lcd.begin(16,2);
    digitalWrite(s6,HIGH);
    digitalWrite(s7,HIGH);
    digitalWrite(s8,HIGH);
-  lcd.setCursor(5,0);
+  lcd.setCursor(5,0);  //Printing a message on lcd display.
   lcd.print("WELCOME");
   delay(3000);
   lcd.clear();
@@ -59,7 +59,7 @@ lcd.begin(16,2);
   delay(3000);
 
   lcd.clear();
-  lcd.setCursor(1,0);
+  lcd.setCursor(1,0); // Printing a default states of switches on lcd.
       lcd.print("S1  S2  S3  S4");
       lcd.setCursor(1,1);
       lcd.print("OFF");
@@ -83,24 +83,26 @@ lcd.begin(16,2);
       lcd.print("OFF");
       delay(1000);
   inputString.reserve(200);
-  Serial.print("AT+CMGF=1\r");    
+  Serial.print("AT+CMGF=1\r");// Printing a message on serial monitor for gsm module.
+                              // AT+CMGF at command is used to select the operating mode of the GSM/GPRS modem.   
   delay(1000);
-  Serial.print("AT+CMGDA=\""); 
+  Serial.print("AT+CMGDA=\""); // AT+CMGDA command is used to delete all SMS messages.
 
   Serial.println("DEL ALL\"");
   delay(1000);
-  Serial.print("AT+CMGS=\"+918287752883\"\r");    
+  Serial.print("AT+CMGS=\"+918287752883\"\r"); // AT+CMGS=\"+xxxxxxxxxxxx is used for send sms to xxxxxxxxxx mobile number.    
   delay(1000);
-  Serial.print("HARSHIT SAGAR YOUR DEVICE IS CONNECTED NOW YOU CAN USE IT.\r");   
+  Serial.print("HARSHIT SAGAR YOUR DEVICE IS CONNECTED NOW YOU CAN USE IT.\r"); // Message to send for confirmation that device is connected.
   delay(1000);
   Serial.write(0x1A);
   delay(1000);
   Serial.print("AT+CNMI=2,2,0,0,0\r"); 
   delay(1000);
 }
-void loop() { 
+void loop() // After this loop will start. 
+{ 
   lcd.clear();
-lcd.setCursor(0,0);
+lcd.setCursor(0,0); // Printing the present status of all switches in lcd.
 lcd.print(" S1  S2  S3  S4");
 lcd.setCursor(1,1);
 lcd.print(S1);
@@ -124,24 +126,24 @@ lcd.setCursor(13,1);
 lcd.print(S8);
 delay(1000);
 
-  if (stringComplete && inputString!="") {
+  if (stringComplete && inputString!="") {  // To check received message from gsm.
     inputString.toLowerCase();
 
 
 
-    if(inputString=="@s1 on#")
+    if(inputString=="@s1 on#") // Condition for ON switch 1.  
 
     {
 
       digitalWrite(s1, LOW); 
       S1="ON";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+918287752883\"\r"); // After Switch ON the Switch 1 it will execute a message for confirmation that switch 1 is ON.    
 
 
 
   delay(500);
 
-  Serial.print("SWITCH-1 IS ON\r");   
+  Serial.print("SWITCH-1 IS ON\r");  // Message to send. 
 
   delay(500);
 
@@ -159,19 +161,19 @@ delay(1000);
 
     }
 
-    else if(inputString=="@s1 off#")
+    else if(inputString=="@s1 off#") // Condition for OFF switch 1. 
 
     {
 
       digitalWrite(s1,HIGH); 
       S1="OFF";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+918287752883\"\r");    // After Switch ON the Switch 1 it will execute a message for confirmation that switch 1 is OFF.
 
 
 
   delay(500);
 
-  Serial.print("SWITCH-1 IS OFF\r");   
+  Serial.print("SWITCH-1 IS OFF\r");  // Message to send. 
 
   delay(500);
 
@@ -571,7 +573,7 @@ delay(1000);
   delay(500);
 
     }
-    else if(inputString=="@all off#")
+    else if(inputString=="@all off#") // Condition for Switch OFF all switches.
 
     {
 
@@ -611,7 +613,7 @@ delay(1000);
   delay(500);
 
     }
-    else if(inputString=="@all on#")
+    else if(inputString=="@all on#") // Condition for Switch ON all switches.
 
     {
 
@@ -631,13 +633,13 @@ delay(1000);
       S7="ON";
       digitalWrite(s8, LOW); 
       S8="ON";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");
+      Serial.print("AT+CMGS=\"+918287752883\"\r"); // After Switch ON all Switches it will execute a message for confirmation that all switches are ON.
 
 
 
   delay(500);
 
-  Serial.print("ALL SWITCHES ARE ON\r");   
+  Serial.print("ALL SWITCHES ARE ON\r");   // Message to send.
 
   delay(500);
 
@@ -652,17 +654,17 @@ delay(1000);
   delay(500);
 
     }
-    else if(inputString=="@status#")
+    else if(inputString=="@status#") // Condition for get status that which switch is ON or which switch is OFF.
 
     {
 
      
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+918287752883\"\r");    // It will send a message of the status of a given mobile number. 
 
 
 
   delay(500);
-  Serial.print("        STATUS   ");
+  Serial.print("        STATUS   "); // Message to send.
   Serial.print("\nSWITCH-1 IS ");
   Serial.print(S1);
   Serial.print("\nSWITCH-2 IS ");
