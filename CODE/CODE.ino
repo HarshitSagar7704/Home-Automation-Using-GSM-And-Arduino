@@ -90,7 +90,7 @@ lcd.begin(16,2);        // Defining pins for outputs and inputs.
 
   Serial.println("DEL ALL\"");
   delay(1000);
-  Serial.print("AT+CMGS=\"+918287752883\"\r"); // AT+CMGS=\"+xxxxxxxxxxxx is used for send sms to xxxxxxxxxx mobile number.    
+  Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r"); // AT+CMGS=\"+xxxxxxxxxxxx is used for send sms to xxxxxxxxxx mobile number.    
   delay(1000);
   Serial.print("HARSHIT SAGAR YOUR DEVICE IS CONNECTED NOW YOU CAN USE IT.\r"); // Message to send for confirmation that device is connected.
   delay(1000);
@@ -137,7 +137,7 @@ delay(1000);
 
       digitalWrite(s1, LOW); 
       S1="ON";
-      Serial.print("AT+CMGS=\"+918287752883\"\r"); // After Switch ON the Switch 1 it will execute a message for confirmation that switch 1 is ON.    
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r"); // After Switch ON the Switch 1 it will execute a message for confirmation that switch 1 is ON.    
 
 
 
@@ -167,7 +167,7 @@ delay(1000);
 
       digitalWrite(s1,HIGH); 
       S1="OFF";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    // After Switch ON the Switch 1 it will execute a message for confirmation that switch 1 is OFF.
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");    // After Switch ON the Switch 1 it will execute a message for confirmation that switch 1 is OFF.
 
 
 
@@ -194,7 +194,7 @@ delay(1000);
 
       digitalWrite(s2, LOW); 
       S2="ON";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");    
 
 
 
@@ -222,7 +222,7 @@ delay(1000);
 
       digitalWrite(s2,HIGH); 
       S2="OFF";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");    
 
 
 
@@ -249,7 +249,7 @@ delay(1000);
 
       digitalWrite(s3, LOW); 
       S3="ON";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");    
 
 
 
@@ -277,7 +277,7 @@ delay(1000);
 
       digitalWrite(s3,HIGH); 
       S3="OFF";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");    
 
 
 
@@ -304,7 +304,7 @@ delay(1000);
 
       digitalWrite(s4, LOW); 
       S4="ON";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");    
 
 
 
@@ -332,7 +332,7 @@ delay(1000);
 
       digitalWrite(s4, HIGH); 
       S4="OFF";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");    
 
 
 
@@ -359,7 +359,7 @@ delay(1000);
 
       digitalWrite(s5, LOW); 
       S5="ON";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");    
 
 
 
@@ -387,7 +387,7 @@ delay(1000);
 
       digitalWrite(s5,HIGH); 
       S5="OFF";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");    
 
 
 
@@ -414,7 +414,7 @@ delay(1000);
 
       analogWrite(s6,0); 
       S6="ON";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");    
 
 
 
@@ -442,7 +442,7 @@ delay(1000);
 
       analogWrite(s6,1023); 
       S6="OFF";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");    
 
 
 
@@ -469,7 +469,7 @@ delay(1000);
 
       analogWrite(s7,0); 
       S7="ON";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");    
 
 
 
@@ -497,7 +497,7 @@ delay(1000);
 
       analogWrite(s7,1023); 
       S7="OFF";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");    
 
 
 
@@ -524,7 +524,7 @@ delay(1000);
 
       analogWrite(s8,0); 
       S8="ON";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");    
 
 
 
@@ -553,7 +553,7 @@ delay(1000);
 
       analogWrite(s8,1023); 
       S8="OFF";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");   
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");   
 
 
   delay(500);
@@ -594,7 +594,7 @@ delay(1000);
       S7="OFF";
       digitalWrite(s8, HIGH); 
       S8="OFF";
-      Serial.print("AT+CMGS=\"+918287752883\"\r");   
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");   
 
 
   delay(500);
@@ -633,7 +633,7 @@ delay(1000);
       S7="ON";
       digitalWrite(s8, LOW); 
       S8="ON";
-      Serial.print("AT+CMGS=\"+918287752883\"\r"); // After Switch ON all Switches it will execute a message for confirmation that all switches are ON.
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r"); // After Switch ON all Switches it will execute a message for confirmation that all switches are ON.
 
 
 
@@ -659,7 +659,7 @@ delay(1000);
     {
 
      
-      Serial.print("AT+CMGS=\"+918287752883\"\r");    // It will send a message of the status of a given mobile number. 
+      Serial.print("AT+CMGS=\"+91827xxxxxxx\"\r");    // It will send a message of the status of a given mobile number. 
 
 
 
