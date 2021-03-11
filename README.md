@@ -9,7 +9,7 @@ Mobile Communication) MODEM (ModulatorDemodulator).
 home automation system which can be widely used
 for multitude of applications including educational
 sector, traffic control, banks, public advertisements
-etc. 
+etc. And this project is going to be used in so many fields.
 
 ![DEMO!](https://user-images.githubusercontent.com/69238027/94373120-d2abfc80-0120-11eb-906c-6ac119aeef83.jpeg)
 
